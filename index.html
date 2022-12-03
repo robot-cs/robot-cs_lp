@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LPの練習" />
+    <!-- reset.css ress -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+    <title>LPの練習</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <h1 class="site-title">
+            <a href="#">RobotCreators</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a 
+                        href="https://twitter.com/Robot_CS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><img class="icon" src="img/twitter.jpg" alt="Twitter" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        <picture>
+            <source media="(max-width:650px)" srcset="img/otto.jpg">
+            <img src="img/spider1.jpg" alt="otto"/>
+        </picture>
+    </div>
+
+    <!-- about -->
+    <section id="about" class="wrapper">
+        <h2 class="sec-title">About</h2>
+        <ul>
+            <li>RobotCreators</li>
+            <li>ロボット製作サークルとして設立</li>
+            <li>電子工作、CAD設計、プログラミング等を行います</li>
+            <li>メールアドレス:robot-cs@outlook.jp</li>
+        </ul>
+        <p>ロボット好きのためのサークルです。毎週部室で各々が作りたいモノを好きなように作っています。また、毎週火曜日には外部の小学生にプログラミングを教えています。</p>
+    </section>
+
+    <!-- works -->
+    <section id="works" class="wrapper">
+        <h2 class="sec-title">Works</h2>
+        <ul>
+            <li><img src="img/arcade001_1.jpg" alt="works1" ></li>
+            <li><img src="img/otto.jpg" alt="works2" ></li>
+            <li><img src="img/RC_car.jpg" alt="works3" ></li>
+            <li><img src="img/spider2.jpg" alt="works4" ></li>
+            <li><img src="img/obstacle-avoiding-car.jpg" alt="works5" ></li>
+            <li><img src="img/paper-arm.jpg" alt="works6" ></li>
+            <li><img src="" alt="works7" ></li>
+            <li><img src="" alt="works8" ></li>
+            <li><img src="" alt="works9" ></li>
+        </ul>
+    </section>
+
+    <!-- news -->
+    <section id="news" class="wrapper">
+        <h2 class="sec-title">News</h2>
+        <dl>
+            <dt>2022/11/27</dt>
+            <dd>本サイトをリリースしました。</dd>
+            <dt>2022/11/27</dt>
+            <dd>理大祭ロボット展を終了しました。</dd>
+            <dt>2022/11/26</dt>
+            <dd>理大祭K409でロボット展を開催しました。</dd>
+            <dt>2022/4/10</dt>
+            <dd>2年ぶりに活動を再開しました。</dd>
+        </dl>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="wrapper">
+        <h2 class="sec-title">Contact</h2>
+        <p>お問い合わせは以下のフォームから</p>
+        <form action="https://formsubmit.co/421077fefe53f180f090db00218b270a " method="POST" />
+        <dl>
+            <dt><label for="name">お名前</label></dt>
+            <dd><input type="text" id="name" name="name" required></dd>
+            <dt><label for="email">メールアドレス</label></dt>
+            <dd><input type="email" id="email" name="email" required></dd>
+            <dt><label for="content">内容</label></dt>
+            <dd><textarea id="content" name="content" cols="30" rows="10" required></textarea></dd>
+        </dl>
+        <div class="button"><input type="submit" value="送信"></div>
+        </form>
+    </section>
+</body>
+</html>
