@@ -241,7 +241,7 @@ li {
         align-items: center;
     }
     #works ul li{
-        width: 100%;
+        width: 90%;
     }
     /* news */
     #news dl{
