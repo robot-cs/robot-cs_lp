@@ -242,7 +242,6 @@ li {
     }
     #works ul li{
         width: 100%;
-        padding: 0 50px;
     }
     /* news */
     #news dl{
@@ -260,7 +259,7 @@ li {
     }
     /* contact */
     #contact p{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     /* top_btn */
     #pagetop a {
