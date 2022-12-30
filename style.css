@@ -262,8 +262,12 @@ li {
         font-size: 0.9rem;
     }
     /* top_btn */
-    #pagetop a {
+    .pagetop{
         width: 45px;
         height: 45px;
+    }
+    .pagetop__arrow {
+        height: 10px;
+        width: 10px;
     }
 }
