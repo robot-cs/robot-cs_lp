@@ -294,6 +294,10 @@ footer {
     #contact p{
         font-size: 0.9rem;
     }
+    /* footer */
+    footer {
+        height: 100px;
+    }
     /* pagetop_btn */
     .pagetop-btn{
         width: 45px;
