@@ -183,8 +183,37 @@ li {
     color:black;
 }
 
-/* top_btn */
-.pagetop {
+/* footer */
+footer {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+.social {
+	display: flex;
+}
+.social a{
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	color: white;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	margin: 0 10px;
+	transition: all 0.3;
+}
+.social a:hover {
+	transform: scale(1.3);
+}
+
+/* pagetop_btn */
+.pagetop-btn {
     height: 80px;
     width: 80px;
     position: fixed;
@@ -261,8 +290,8 @@ li {
     #contact p{
         font-size: 0.9rem;
     }
-    /* top_btn */
-    .pagetop{
+    /* pagetop_btn */
+    .pagetop-btn{
         width: 45px;
         height: 45px;
     }
