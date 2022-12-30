@@ -1,3 +1,4 @@
+//動画再生・停止
 const video=document.querySelector('#video');
 const video_btn = document.querySelector('#video-btn');
 let is_playing =false;
@@ -12,6 +13,7 @@ video_btn.addEventListener('click',() => {
 	}
 });
 
+//mainのスライドイン動作
 (window.onload = function() {
 
   // フェードイン処理
@@ -28,5 +30,4 @@ video_btn.addEventListener('click',() => {
       }
     });
    });
-
 })(); 
