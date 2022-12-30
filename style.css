@@ -238,7 +238,7 @@ li {
     /* works */
     #works ul{
         flex-direction: column;
-        /*padding: 0 50px; */
+        align-items: center;
     }
     #works ul li{
         width: 100%;
