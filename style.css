@@ -13,6 +13,29 @@ body {
     /* background-color:papayawhip; */
     transition: all 0.7s ease-in-out;
 }
+body::before{
+    content: "";
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:darkred;
+    opacity: 0.65;
+    animation: curtainOpen 1s forwards;
+    animation-delay: 1s;
+    z-index: 999;
+}
+@keyframes curtainOpen{
+    0%{
+        width: 50vh;
+    }
+    100%{
+        width: 0vh;
+        visibility: hidden;
+    }
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -45,11 +68,11 @@ li {
         transform: translateX(-140px);
         opacity: 0;
     }
-    60%{
+    70%{
         transform: translateX(0);
     }
-    75%{
-        transform: translateX(-30px);
+    85%{
+        transform: translateX(-15px);
     }
     100%{
         transform: translateX(0);
@@ -283,7 +306,8 @@ footer {
     align-items: center;
     justify-content: center;
 }
-.container::after {
+/* for snowfall */
+.container::after{
 	content: "";
 	position: absolute;
 	width: 100%;
