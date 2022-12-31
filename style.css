@@ -287,6 +287,17 @@ audio {
     margin-top: 100px;
 }
 
+/* bgm-btn */
+.bgm-btn{
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-weight: bold;
+}
+.clicked{
+    opacity: 0.5;
+}
+
 /* mode-btn */
 .mode-btn{
     width: 80px;

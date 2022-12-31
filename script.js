@@ -50,3 +50,18 @@ icon.onclick = () => {
     icon.src = "img/moon.png";
   }
 };
+
+//BGM
+const my_song = document.getElementById("my-song");
+const bgm_btn = document.getElementById("bgm-btn");
+
+bgm_btn.onclick = () => {
+  if (my_song.paused) {
+    my_song.play();
+    bgm_btn.classList.add("clicked");
+  }
+  else{
+    my_song.pause();
+    bgm_btn.classList.remove("clicked");
+  }
+}
