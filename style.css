@@ -38,9 +38,11 @@ li {
 .site-title img{
     width: 60px;
     margin-right: 10px;
+    animation: SlideIn 1.6s;
 }
 #site-title{
     transition: all 3.0s ease-in-out;
+    animation: SlideIn 1.6s;
 }
 .wrapper{
     max-width: 960px;
@@ -293,6 +295,8 @@ audio {
     left: 20px;
     top: 20px;
     font-weight: bold;
+    visibility: hidden;
+    animation: late-open 0.2s ease-in 2s forwards;
 }
 .clicked{
     opacity: 0.5;
@@ -304,7 +308,15 @@ audio {
     position: fixed;
     right: 10px;
     top: 30px;
+    visibility: hidden;
+    animation: late-open 0.2s ease-in 2s forwards;
 }
+@keyframes late-open {
+    to {
+        visibility: visible;
+    }
+}
+
 /* pagetop_btn */
 .pagetop-btn {
     height: 80px;
@@ -319,6 +331,8 @@ audio {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    visibility: hidden;
+    animation: late-open 0.2s ease-in 2s forwards;
 }
 .pagetop__arrow {
     height: 20px;
