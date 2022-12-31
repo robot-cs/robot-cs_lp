@@ -65,3 +65,7 @@ bgm_btn.onclick = () => {
     bgm_btn.classList.remove("clicked");
   }
 }
+
+my_song.onended = () => {
+  bgm_btn.classList.remove("clicked");
+}

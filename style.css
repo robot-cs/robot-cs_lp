@@ -410,6 +410,10 @@ audio {
     footer {
         height: 80px;
     }
+    /* bgm-btn */
+    .bgm-btn{
+        font-size: 0.7rem;
+    }
     /* mode-btn */
     .mode-btn{
         width: 30px;
