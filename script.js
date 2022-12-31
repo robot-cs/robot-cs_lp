@@ -13,7 +13,7 @@ video_btn.addEventListener('click',() => {
 	}
 });
 
-//mainのスライドイン動作
+//見出しのスライドイン動作
 (window.onload = function() {
 
   // フェードイン処理
