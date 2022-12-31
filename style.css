@@ -279,7 +279,7 @@ footer {
 }
 
 /* sp */
-@media screen and (max-width:650px) {
+@media screen and (max-width:770px) {
     #header{
         height: 200px;
     }
