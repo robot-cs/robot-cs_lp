@@ -366,7 +366,7 @@ footer {
 /* light-dark-mode */
 :root {
     --dark-color: rgb(20, 20, 20);
-    --white-color: #fff;
+    --white-color: yellow;
 }
 .dark-mode {
     color: var(--white-color) !important;
