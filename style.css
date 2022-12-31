@@ -252,8 +252,8 @@ footer {
 }
 
 /* snow-container */
-.snow-container {
-	background-image: url("img/snowfall.jpg");
+.container {
+	/* background-image: url("img/scenery/snowfall.jpg"); */
     width: 100%;
 	height: 80vh;
 	background-position: center;
@@ -265,7 +265,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
-.snow-container::after {
+.container::after {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -277,7 +277,7 @@ footer {
     pointer-events: none;
 }
 .phrase {
-	color: #fff;
+	/* color: #fff; */
 	text-align: center;
 	font-size: 80px;
 	/* font-family: cursive; */
@@ -449,7 +449,7 @@ audio {
 /* snow */
 .snow {
     /*雪の色*/
-    color: snow;
+    /* color: snow; */
     /*雪の大きさ*/
     font-size: 10px;
     /*初期位置*/
@@ -471,11 +471,9 @@ audio {
     /*雪アニメーション1*/
     animation: roll 5s linear infinite;
 }
-    /*2つめの雪アニメーション*/
 .snow2nd{
     animation: anim 8s linear infinite;
 }
-  
 @keyframes roll {
     0% {transform:rotate(0deg);}
     90% {opacity:1;}

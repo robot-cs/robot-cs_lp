@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RobotCreators HP" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>東京理科大学 RobotCreators HP</title>
     <link rel="stylesheet" href="style.css">
     <!-- reset.css ress -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <!-- google font -->
     <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
-    <!-- フリーアイコンの適用 -->
+    <!-- free icon -->
 	<link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -18,14 +19,14 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
-    <title>東京理科大学 RobotCreators HP</title>
+    <!-- google search console -->
     <meta name="google-site-verification" content="x7btwmxiZPg_HTzW3Tfsl3a9fx2D6Ce2W6u7D3ExmqQ" />
 </head>
 <body>
     <!-- Header -->
     <header id="header">
         <h1 class="site-title">
-            <img class="icon" src="img/アイコン.png" />
+            <img class="icon" src="img/my-icon.ico" />
             <a href="#" id="site-title">RobotCreators</a>
         </h1>
         <nav>
@@ -50,8 +51,8 @@
     <!-- Main -->
     <div id="main">
         <picture>
-            <source media="(max-width:650px)" srcset="img/otto.jpg">
-            <img src="img/spider1.jpg" alt="otto"/>
+            <source media="(max-width:650px)" srcset="img/main/otto.jpg">
+            <img src="img/main/spider1.jpg" alt="otto"/>
         </picture>
     </div>
 
@@ -72,60 +73,68 @@
         <h2 class="sec-title fade">Works</h2>
         <ul>
             <li>
-                    <video muted controls poster="img/arcade001_1.jpg">
-                        <source src="video/arcade001_simulation.mp4" type="video/mp4">
-                        <img src="img/arcade001_1.jpg" alt="work1">
-                    </video>
-                    <div class="video-btn" id="video-btn"></div>
-            </li>
-            <li>
-                <video muted controls poster="img/otto.jpg">
-                    <source src="video/otto_demo.mp4" type="video/mp4">
-                    <img src="img/otto.jpg" alt="work2">
-                </video>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work1/arcade001_1.jpg"
+                    src="works/work1/arcade001_simulation.mp4"
+                ></video>
                 <div class="video-btn" id="video-btn"></div>
             </li>
             <li>
-                <video muted controls poster="img/RC_car.jpg">
-                <source src="video/joystick-control-car_demo.mp4" type="video/mp4">
-                <img src="img/RC_car.jpg" alt="work3">
-                </video>
-            <div class="video-btn" id="video-btn"></div>
-            </li>
-            <li>
-                <video muted controls poster="img/spider2.jpg">
-                    <source src="video/meped_demo.mp4" type="video/mp4">
-                    <img src="img/spider2.jpg" alt="work4">
-                </video>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work2/otto.jpg"
+                    src="works/work2/otto_demo.mp4"
+                ></video>
                 <div class="video-btn" id="video-btn"></div>
             </li>
             <li>
-                <video muted controls poster="img/きれい君1号.jpg">
-                    <source src="video/堀川エコロボット.mp4" type="video/mp4">
-                    <img src="img/きれい君1号.jpg" alt="work5">
-                </video>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work3/RC_car.jpg"
+                    src="works/work3/joystick-control-car_demo.mp4"
+                ></video>
                 <div class="video-btn" id="video-btn"></div>
             </li>
             <li>
-                <video muted controls poster="img/wifi-tank.jpg">
-                    <source src="video/wifi-tank_demo.mp4" type="video/mp4">
-                    <img src="img/wifi-tank.jpg" alt="work6">
-                </video>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work4/spider2.jpg"
+                    src="works/work4/meped_demo.mp4"
+                ></video>
                 <div class="video-btn" id="video-btn"></div>
             </li>
             <li>
-                <video muted controls poster="img/paper-arm.jpg">
-                    <source src="video/paper-arm_demo.mp4" type="video/mp4">
-                    <img src="img/paper-arm.jpg" alt="work7">
-                </video>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work5/きれい君1号.jpg"
+                    src="works/work5/堀川エコロボット.mp4"
+                ></video>
                 <div class="video-btn" id="video-btn"></div>
             </li>
-            <li><img src="img/obstacle-avoiding-car.jpg" alt="works8" ></li>
             <li>
-                <video muted controls poster="img/3dprinter.jpg">
-                    <source src="video/3dprinter_demo.mp4" type="video/mp4">
-                    <img src="img/3dprinter.jpg" alt="work9">
-                </video>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work6/wifi-tank.jpg"
+                    src="works/work6/wifi-tank_demo.mp4"
+                ></video>
+                <div class="video-btn" id="video-btn"></div>
+            </li>
+            <li>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work7/paper-arm.jpg"
+                    src="works/work7/paper-arm_demo.mp4"
+                ></video>
+                <div class="video-btn" id="video-btn"></div>
+            </li>
+            <li><img src="works/work8/obstacle-avoiding-car.jpg" alt="works8" ></li>
+            <li>
+                <video 
+                    muted controls controlsList="nodownload"
+                    poster="works/work9/3dprinter.jpg"
+                    src="works/work9/3dprinter_demo.mp4"
+                ></video>
                 <div class="video-btn" id="video-btn"></div>
             </li>
         </ul>
@@ -153,7 +162,7 @@
         <h2 class="sec-title fade">Contact</h2>
         <p>お問い合わせは以下の公式LINEから</p>
         <p>↓　↓　↓　↓</p>
-        <div><img src="img\robotcs_line_opch.png" alt="Line" ></div>
+        <div><img src="img\social\robotcs_line_opch.png" alt="Line" ></div>
         <div id="back-to-top"><a href="#" id="nav-to-top">トップへ戻る</a></div>
     </section>
 
@@ -171,22 +180,28 @@
 		</div>
     </footer>
 
-    <!-- snow-container -->
-    <div class="snow-container">
-        <h1 class="phrase">Snow Season</h1>
-        <audio controls id="my-song" src="music/Yuki-MB01-1(Reverb-Slow).mp3"></audio>
+    <!-- container -->
+    <div class="container" style="background-image: url('img/container/newyear/newyear.jpg');">
+        <h1 class="phrase" style="color: maroon;"
+            >Happy New Year
+        </h1>
+        <audio
+            controls id="my-song" 
+            controlslist="nodownload"
+            src="music/newyear/tsurukame.mp3">
+        </audio>
     </div>
 
     <!-- 固定パーツ -->
     <!-- bgm-btn -->
     <p class="bgm-btn" id="bgm-btn">bgm</p>
     <!-- mode-btn -->
-    <p class="mode-btn"><img src="img/moon.png" id="icon" /></p>
+    <p class="mode-btn"><img src="img/mode/moon.png" id="icon" /></p>
     <!-- pagetop-btn -->
     <a class="pagetop-btn" href="#"><div class="pagetop__arrow"></div></a>
     <!-- snow -->
-    <div class="snow">●</div>
-    <div class="snow snow2nd">●</div>
+    <div class="snow" style="color: orange;">●</div>
+    <div class="snow snow2nd" style="color: maroon;">●</div>
 
     <!-- javaScript -->
     <script

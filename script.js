@@ -45,9 +45,9 @@ icon.onclick = () => {
   document.getElementById("nav-twitter").classList.toggle("dark-mode-a");
   document.getElementById("nav-to-top").classList.toggle("dark-mode-a");
   if (document.body.classList.contains("dark-mode")) {
-    icon.src = "img/sun.png";
+    icon.src = "img/mode/sun.png";
   } else {
-    icon.src = "img/moon.png";
+    icon.src = "img/mode/moon.png";
   }
 };
 
