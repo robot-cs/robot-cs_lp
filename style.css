@@ -93,9 +93,7 @@ li {
 #header ul li a:hover{
     opacity: 0.5;
 }
-#header .fa-brands{
-    background-color: gainsboro;
-}
+
 /* main */
 #main{
     /* background-color:aquamarine; */
