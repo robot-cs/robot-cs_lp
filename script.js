@@ -31,3 +31,21 @@ video_btn.addEventListener('click',() => {
     });
    });
 })(); 
+
+//モード切り替え
+var icon = document.querySelector("#icon");
+
+icon.onclick = () => {
+  document.body.classList.toggle("dark-mode");
+  document.getElementById("site-title").classList.toggle("dark-mode");
+  document.getElementById("nav-about").classList.toggle("dark-mode");
+  document.getElementById("nav-works").classList.toggle("dark-mode");
+  document.getElementById("nav-news").classList.toggle("dark-mode");
+  document.getElementById("nav-contact").classList.toggle("dark-mode");
+  document.getElementById("nav-twitter").classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    icon.src = "img/sun.png";
+  } else {
+    icon.src = "img/moon.png";
+  }
+};
