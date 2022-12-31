@@ -11,10 +11,12 @@ body {
     /* background-color:lightyellow; */
     /* background-color:thistle; */
     /* background-color:papayawhip; */
+    transition: all 0.7s ease-in-out;
 }
 a{
     text-decoration: none;
     color: black;
+    transition: all 3.0s ease-in-out;
 }
 p{
     font-size: 1.3rem;
@@ -40,7 +42,8 @@ li {
 }
 .wrapper{
     max-width: 960px;
-    margin: 0 auto 200px auto;
+    margin: 0 auto 170px auto;
+    padding-top: 30px;
     font-size: 0.9rem;
 }
 .sec-title{
@@ -91,7 +94,7 @@ li {
     opacity: 0.5;
 }
 #header .fa-brands{
-    background-color: bgainsboro;
+    background-color: gainsboro;
 }
 /* main */
 #main{
@@ -249,7 +252,7 @@ footer {
 .mode-btn{
     width: 80px;
     position: fixed;
-    right: 20px;
+    right: 10px;
     top: 30px;
 }
 
@@ -364,12 +367,16 @@ footer {
 
 /* light-dark-mode */
 :root {
-    --dark-color: #000;
+    --dark-color: rgb(20, 20, 20);
     --white-color: #fff;
 }
 .dark-mode {
     color: var(--white-color) !important;
     background: var(--dark-color) !important;
+}
+.dark-mode-a {
+    color: var(--white-color) !important;
+    background-color: transparent;
 }
 
 /* snow */

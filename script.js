@@ -37,12 +37,13 @@ var icon = document.querySelector("#icon");
 
 icon.onclick = () => {
   document.body.classList.toggle("dark-mode");
-  document.getElementById("site-title").classList.toggle("dark-mode");
-  document.getElementById("nav-about").classList.toggle("dark-mode");
-  document.getElementById("nav-works").classList.toggle("dark-mode");
-  document.getElementById("nav-news").classList.toggle("dark-mode");
-  document.getElementById("nav-contact").classList.toggle("dark-mode");
-  document.getElementById("nav-twitter").classList.toggle("dark-mode");
+  document.getElementById("site-title").classList.toggle("dark-mode-a");
+  document.getElementById("nav-about").classList.toggle("dark-mode-a");
+  document.getElementById("nav-works").classList.toggle("dark-mode-a");
+  document.getElementById("nav-news").classList.toggle("dark-mode-a");
+  document.getElementById("nav-contact").classList.toggle("dark-mode-a");
+  document.getElementById("nav-twitter").classList.toggle("dark-mode-a");
+  document.getElementById("nav-to-top").classList.toggle("dark-mode-a");
   if (document.body.classList.contains("dark-mode")) {
     icon.src = "img/sun.png";
   } else {
