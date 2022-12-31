@@ -248,6 +248,40 @@ footer {
 .social a:hover {
 	transform: scale(1.3);
 }
+
+/* snow-container */
+.snow-container {
+	background-image: url("img/snowfall.jpg");
+    width: 100%;
+	height: 80vh;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.snow-container::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.05;
+}
+.phrase {
+	color: #fff;
+	text-align: center;
+	font-size: 80px;
+	/* font-family: cursive; */
+	font-family: Arial;
+	font-weight: bold;
+	z-index: 2px;
+}
+
 /* mode-btn */
 .mode-btn{
     width: 80px;
@@ -255,7 +289,6 @@ footer {
     right: 10px;
     top: 30px;
 }
-
 /* pagetop_btn */
 .pagetop-btn {
     height: 80px;
@@ -380,37 +413,6 @@ footer {
 }
 
 /* snow */
-.snow-container {
-	background-image: url("img/snowfall.jpg");
-    width: 100%;
-	height: 80vh;
-	background-position: center;
-	background-size: cover;
-	position: relative;
-	overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.snow-container::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: #000;
-	opacity: 0.05;
-}
-.phrase {
-	color: #fff;
-	text-align: center;
-	font-size: 80px;
-	/* font-family: cursive; */
-	font-family: Arial;
-	font-weight: bold;
-	z-index: 2px;
-}
 .snow {
     /*雪の色*/
     color: snow;
