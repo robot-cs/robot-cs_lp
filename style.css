@@ -259,6 +259,7 @@ footer {
 	position: relative;
 	overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -271,6 +272,7 @@ footer {
 	left: 0;
 	background-color: #000;
 	opacity: 0.05;
+    pointer-events: none;
 }
 .phrase {
 	color: #fff;
@@ -280,6 +282,9 @@ footer {
 	font-family: Arial;
 	font-weight: bold;
 	z-index: 2px;
+}
+audio {
+    margin-top: 100px;
 }
 
 /* mode-btn */
