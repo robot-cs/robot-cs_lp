@@ -302,13 +302,10 @@ footer {
         line-height: 60px;
         margin-top: 20px;
     }
-    #header ul{
-        /* padding: 1ox 1ox; */
-    }
     #header li{
         font-size: 0.8rem;
         /* margin-left: 20px; */
-        margin: 0 1ox;
+        margin: 0 3ox;
     }
     /* about */
     #about{
