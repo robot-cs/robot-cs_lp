@@ -124,6 +124,7 @@ li {
     display: flex;
     padding: 10ox 10ox;
     justify-content: center;
+    animation: SlideIn 1.6s;
 }
 
 #header ul li{
@@ -165,7 +166,7 @@ li {
 
 /* about */
 #about{
-    padding-bottom: 150px;
+    padding-bottom: 80px;
 }
 #about ul{
     margin-bottom: 30px;
@@ -318,6 +319,12 @@ footer {
 	opacity: 0.05;
     pointer-events: none;
 }
+.parallax{
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .phrase {
 	/* color: #fff; */
 	text-align: center;
@@ -420,7 +427,7 @@ audio {
     }
     /* about */
     #about{
-        margin: 0 30px;
+        padding: 0 30px;
     }
     /* works */
     #works ul{
