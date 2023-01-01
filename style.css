@@ -60,6 +60,7 @@ li {
 }
 .site-title img{
     width: 60px;
+    height: 60px;
     margin-right: 10px;
     animation: SlideIn2 1.6s forwards;
 }
@@ -249,6 +250,7 @@ li {
 }
 #contact img{
     width: 200px;
+    height: 200px;
     margin-top: 30px;
 }
 #back-to-top{
@@ -354,6 +356,7 @@ audio {
 /* mode-btn */
 .mode-btn{
     width: 80px;
+    height: 80px;
     position: fixed;
     right: 10px;
     top: 30px;
@@ -416,6 +419,10 @@ audio {
     z-index: 2; */
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
+}
+.kagurasuzu-btn img{
+    width: 80px;
+    height: 80px;
 }
 
 /* スマートフォン用 */
@@ -499,6 +506,10 @@ audio {
     }
     /* kagurasuzu-btn */
     .kagurasuzu-btn{
+        width: 50px;
+        height: 50px;
+    }
+    .kagurasuzu-btn img{
         width: 50px;
         height: 50px;
     }

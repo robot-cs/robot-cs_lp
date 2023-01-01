@@ -38,9 +38,9 @@ $(function() {
 });
 
 //モード切り替え
-var icon = document.querySelector("#icon");
+var mode_icon = document.querySelector("#mode-icon");
 
-icon.onclick = () => {
+mode_icon.onclick = () => {
   document.body.classList.toggle("dark-mode");
   document.getElementById("site-title").classList.toggle("dark-mode-a");
   document.getElementById("nav-about").classList.toggle("dark-mode-a");
@@ -50,9 +50,9 @@ icon.onclick = () => {
   document.getElementById("nav-twitter").classList.toggle("dark-mode-a");
   document.getElementById("nav-to-top").classList.toggle("dark-mode-a");
   if (document.body.classList.contains("dark-mode")) {
-    icon.src = "img/mode/sun.png";
+    mode_icon.src = "img/mode/sun.png";
   } else {
-    icon.src = "img/mode/moon.png";
+    mode_icon.src = "img/mode/moon.png";
   }
 };
 
