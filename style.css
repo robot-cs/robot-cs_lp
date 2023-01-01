@@ -51,6 +51,7 @@ li {
     font-size: 1.2rem;
 }
 .site-title{
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,7 +124,7 @@ li {
 }
 #header ul{
     display: flex;
-    padding: 10ox 10ox;
+    padding: 0 10ox;
     justify-content: center;
     animation: SlideIn 1.6s;
 }
@@ -427,28 +428,27 @@ audio {
 
 /* スマートフォン用 */
 @media screen and (max-width:770px) {
+    /* header */
     #header{
-        height: 200px;
+        flex-direction: column;
+        height: 150px;
+        line-height: 60px;
+        margin-top: 20px;
     }
     .site-title{
         flex-direction: column;
         line-height: 50px;
-        margin-top: 10px;
+        height: 50px;
     }
     .site-title img{
         width: 50px;
-    }
-    /* header */
-    #header{
-        flex-direction: column;
-        height: auto;
-        line-height: 60px;
-        margin-top: 20px;
+        height: 50px;
     }
     #header li{
         font-size: 0.8rem;
         /* margin-left: 20px; */
         margin: 0 3ox;
+        height: 60px;
     }
     /* about */
     #about{
