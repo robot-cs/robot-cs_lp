@@ -71,3 +71,17 @@ bgm_btn.onclick = () => {
 my_song.onended = () => {
   bgm_btn.classList.remove("clicked");
 }
+
+//神楽鈴
+const kagurasuzu_sound = document.getElementById("kagurasuzu-sound");
+const kagurasuzu_btn = document.getElementById("kagurasuzu-btn");
+
+kagurasuzu_btn.onclick = () => {
+    kagurasuzu_sound.currentTime = 0;
+    kagurasuzu_sound.play();
+    kagurasuzu_btn.classList.add("clicked");
+}
+
+kagurasuzu_sound.onended = () => {
+  kagurasuzu_btn.classList.remove("clicked");
+}

@@ -400,6 +400,18 @@ audio {
     }
 }
 
+/* kagurasuzu-btn */
+.kagurasuzu-btn{
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    left: 10px;
+    bottom: 30px;
+    z-index: 2;
+    visibility: hidden;
+    animation: late-open 0.2s ease-in 2s forwards;
+}
+
 /* スマートフォン用 */
 @media screen and (max-width:770px) {
     #header{
@@ -461,7 +473,7 @@ audio {
     }
     /* bgm-btn */
     .bgm-btn{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     /* mode-btn */
     .mode-btn{

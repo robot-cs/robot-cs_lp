@@ -195,7 +195,8 @@
             >Happy New Year
         </h1>
         <audio
-            controls id="bgm" 
+            id="bgm"
+            controls preload="auto"
             controlslist="nodownload"
             src="music/newyear/tsurukame.mp3">
         </audio>
@@ -208,6 +209,15 @@
     <p class="mode-btn"><img src="img/mode/moon.png" id="icon" /></p>
     <!-- pagetop-btn -->
     <a class="pagetop-btn" href="#"><div class="pagetop__arrow"></div></a>
+    <!-- kagurasuzu-btn -->
+    <p class="kagurasuzu-btn" id="kagurasuzu-btn">
+        <audio
+            id="kagurasuzu-sound" 
+            preload="auto"
+            src="music/newyear/Kagura_Suzu02-2.mp3"
+        ></audio>
+        <img src="img/kagurasuzu-icon.ico">
+    </p>
     <!-- snow -->
     <div class="snow" style="color: orange;">●</div>
     <div class="snow snow2nd" style="color: white;">●</div>
