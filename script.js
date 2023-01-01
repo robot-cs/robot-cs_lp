@@ -60,7 +60,7 @@ icon.onclick = () => {
 const my_song = document.getElementById("bgm");
 const bgm_btn = document.getElementById("bgm-btn");
 
-my_song.volume = 0.3;
+my_song.volume = 0.2;
 
 bgm_btn.onclick = () => {
   if (my_song.paused) {
@@ -80,6 +80,8 @@ my_song.onended = () => {
 //神楽鈴
 const kagurasuzu_sound = document.getElementById("kagurasuzu-sound");
 const kagurasuzu_btn = document.getElementById("kagurasuzu-btn");
+
+kagurasuzu_sound.volume = 0.8;
 
 kagurasuzu_btn.onclick = () => {
     kagurasuzu_sound.currentTime = 0;
