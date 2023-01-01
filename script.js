@@ -32,6 +32,11 @@ video_btn.addEventListener('click',() => {
    });
 })(); 
 
+//リロード時にトップへ移動
+$(function() {
+  $('html,body').animate({ scrollTop: 0 }, '1');
+});
+
 //モード切り替え
 var icon = document.querySelector("#icon");
 
@@ -80,8 +85,7 @@ kagurasuzu_btn.onclick = () => {
     kagurasuzu_sound.currentTime = 0;
     kagurasuzu_sound.play();
     kagurasuzu_btn.classList.add("clicked");
-}
-
-kagurasuzu_sound.onended = () => {
-  kagurasuzu_btn.classList.remove("clicked");
+    setTimeout(() => {
+      kagurasuzu_btn.classList.remove("clicked");
+    }, 400);
 }
