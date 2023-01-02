@@ -28,7 +28,7 @@ body::before{
     height: 100vh;
     background-color:darkred;
     opacity: 0.65;
-    animation: curtainOpen 2s forwards;
+    animation: curtainOpen 1.5s forwards;
     animation-delay: 1.8s;
     z-index: 999;
 }
