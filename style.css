@@ -50,6 +50,7 @@ body::before{
 a{
     text-decoration: none;
     color: black;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 p{
     font-size: 1.3rem;
@@ -363,6 +364,7 @@ audio {
     font-weight: bold;
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .clicked{
     opacity: 0.5;
@@ -382,6 +384,7 @@ audio {
     top: 30px;
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 @keyframes late-open {
     to {
@@ -413,6 +416,7 @@ audio {
     z-index: 2;
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .pagetop__arrow {
     height: 20px;
@@ -448,6 +452,7 @@ audio {
     z-index: 2; */
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .kagurasuzu-btn img{
     width: 80px;
