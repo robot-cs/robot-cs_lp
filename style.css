@@ -496,9 +496,15 @@ audio {
     100% {color:transparent;top:150%;}
 }
 /***************************************/
+.for-sp {
+    display: none;
+}
 
 /* スマートフォン用 */
 @media screen and (max-width:770px) {
+    .for-sp {
+        display: block;
+    }
     /* header */
     #header{
         flex-direction: column;
@@ -550,6 +556,12 @@ audio {
     /* contact */
     #contact p{
         font-size: 0.9rem;
+    }
+    #help{
+        font-size: 0.8rem;
+    }
+    #contact img{
+        margin-top: 0;
     }
     /* footer */
     footer {
