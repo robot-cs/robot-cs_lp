@@ -561,7 +561,7 @@ audio {
         font-size: 0.8rem;
     }
     #contact img{
-        margin-top: 0;
+        margin-top: 3px;
     }
     /* footer */
     footer {
