@@ -531,6 +531,9 @@ audio {
     #about{
         padding: 0 30px;
     }
+    #mail{
+        display: block;
+    }
     /* works */
     #works ul{
         flex-direction: column;
