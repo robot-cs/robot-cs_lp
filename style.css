@@ -329,7 +329,7 @@ footer {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: #000;
+	background-color: black;
 	opacity: 0.05;
     pointer-events: none;
 }
@@ -464,7 +464,7 @@ audio {
     /*雪の色*/
     /* color: snow; */
     /*雪の大きさ*/
-    font-size: 10px;
+    font-size: 15px;
     /*初期位置*/
     position: fixed;
     top: -5%;

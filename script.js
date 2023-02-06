@@ -60,7 +60,7 @@ mode_icon.onclick = () => {
 const my_song = document.getElementById("bgm");
 const bgm_btn = document.getElementById("bgm-btn");
 
-my_song.volume = 0.2;
+my_song.volume = 0.4;
 
 bgm_btn.onclick = () => {
   if (my_song.paused) {
