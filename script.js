@@ -91,3 +91,13 @@ kagurasuzu_btn.onclick = () => {
       kagurasuzu_btn.classList.remove("clicked");
     }, 400);
 }
+// カーソル
+// カーソル用のdivタグを取得してcursorに格納
+var cursor = document.getElementById('stalker'); 
+
+// カーソル用のdivタグをマウスに追従させる
+document.addEventListener('mousemove', function (e) {
+  setTimeout(() => {
+    cursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+  }, 20);
+});

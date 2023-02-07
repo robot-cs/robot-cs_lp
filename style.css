@@ -51,6 +51,7 @@ a{
     text-decoration: none;
     color: black;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: none;
 }
 p{
     font-size: 1.3rem;
@@ -210,7 +211,7 @@ li {
     width: 300px;
     height: 250px;
     object-fit:cover;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.3s;
 }
 #works ul li img:hover{
@@ -232,7 +233,7 @@ li {
     content: "";
     position: absolute;
     bottom: 50px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 /* news */
@@ -353,11 +354,11 @@ audio {
 }
 /***************************************/
 
-/* --固定パーツ-- */
+/* --追加パーツ-- */
 
 /* bgm-btn */
 .bgm-btn{
-    cursor: pointer;
+    /* cursor: pointer; */
     position: fixed;
     left: 20px;
     top: 20px;
@@ -365,6 +366,9 @@ audio {
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.bgm-btn:hover {
+	opacity: 0.5;
 }
 .clicked{
     opacity: 0.5;
@@ -376,7 +380,7 @@ audio {
     --white-color: yellow;
 }
 .mode-btn{
-    cursor: pointer;
+    /* cursor: pointer; */
     width: 80px;
     height: 80px;
     position: fixed;
@@ -385,6 +389,9 @@ audio {
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.mode-btn:hover{
+    opacity: 0.5;
 }
 @keyframes late-open {
     to {
@@ -437,7 +444,7 @@ audio {
 
 /* kagurasuzu-btn */
 .kagurasuzu-btn{
-    cursor: pointer;
+    /* cursor: pointer; */
     height: 80px;
     width: 80px;
     position: fixed;
@@ -453,6 +460,9 @@ audio {
     visibility: hidden;
     animation: late-open 0.2s ease-in 2s forwards;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.kagurasuzu-btn:hover{
+    opacity: 0.5;
 }
 .kagurasuzu-btn img{
     width: 80px;
@@ -495,6 +505,24 @@ audio {
 @keyframes anim {
     100% {color:transparent;top:150%;}
 }
+/* cursor */
+body{
+    cursor: none;
+}
+#stalker {
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(205, 114, 113, 0.5);
+    z-index: 1000;
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+    transform: translate(0, 0);
+    pointer-events: none;
+  }
+
 /***************************************/
 .for-sp {
     display: none;
