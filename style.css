@@ -16,7 +16,7 @@ body {
 /* catain */
 body::before{
     content: "2023";
-    color: pink;
+    color: lightgreen;
     text-align: center;
     line-height: 100vh;
     font-weight: bold;
@@ -26,7 +26,7 @@ body::before{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color:darkred;
+    background-color:darkgreen;
     opacity: 0.65;
     animation: curtainOpen 1.5s forwards;
     animation-delay: 1.8s;
@@ -516,7 +516,8 @@ body{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: rgba(205, 114, 113, 0.5);
+    /* background: rgba(205, 114, 113, 0.5); */
+    background: darkgreen;
     z-index: 1000;
     transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
     transform: translate(0, 0);
