@@ -26,7 +26,7 @@ body::before{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color:darkgreen;
+    background-color:dodgerblue;
     opacity: 0.65;
     animation: curtainOpen 1.5s forwards;
     animation-delay: 1.8s;
