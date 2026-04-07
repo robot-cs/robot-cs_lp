@@ -524,6 +524,53 @@ body{
     pointer-events: none;
   }
 
+.breaking-news {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: min(92vw, 720px);
+    padding: 14px 20px;
+    border: 2px solid #111;
+    border-radius: 999px;
+    background: #fff4bf;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -140%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1200;
+}
+.breaking-news.is-visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+.breaking-news__label {
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #c1121f;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+.breaking-news__text {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.breaking-news__close {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #111;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: none;
+}
+
 /***************************************/
 .for-sp {
     display: none;
@@ -627,6 +674,23 @@ body{
     .kagurasuzu-btn img{
         width: 50px;
         height: 50px;
+    }
+    .breaking-news {
+        top: 12px;
+        gap: 10px;
+        width: calc(100vw - 24px);
+        padding: 12px 14px;
+        border-radius: 20px;
+    }
+    .breaking-news__label{
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+    .breaking-news__text {
+        font-size: 0.9rem;
+    }
+    .breaking-news__close {
+        font-size: 1.2rem;
     }
 }
 /***************************************/

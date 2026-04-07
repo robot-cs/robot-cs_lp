@@ -99,3 +99,21 @@ var cursor = document.getElementById('stalker');
 document.addEventListener('mousemove', function (e) {
     cursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
 });
+
+// Breaking news
+window.addEventListener('load', function () {
+  const breakingNews = document.getElementById('breaking-news');
+  const breakingNewsClose = document.getElementById('breaking-news-close');
+
+  if (!breakingNews || !breakingNewsClose) {
+    return;
+  }
+
+  setTimeout(() => {
+    breakingNews.classList.add('is-visible');
+  }, 3400);
+
+  breakingNewsClose.addEventListener('click', function () {
+    breakingNews.classList.remove('is-visible');
+  });
+});
