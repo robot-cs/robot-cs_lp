@@ -15,10 +15,10 @@ import { useLink } from "../../utils/link";
     <h1>RobotCreators</h1>
   </a>
   <nav class="nav">
-    <a href="/#about" id="nav-about">About</a>
-    <a href="/works" id="nav-works">Works</a>
-    <a href="/blog" id="nav-news">Blog</a>
-    <a href="/#contact" id="nav-contact">Contact</a>
+    <a href={useLink("/#about", false)} id="nav-about">About</a>
+    <a href={useLink("works")} id="nav-works">Works</a>
+    <a href={useLink("blog")} id="nav-news">Blog</a>
+    <a href={useLink("/#contact", false)} id="nav-contact">Contact</a>
     <a
       id="nav-twitter"
       href="https://twitter.com/Robot_CS"

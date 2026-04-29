@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import HeroSlider from "../components/mainPage/HeroSlider.astro";
 import lineQr from "../assets/robotcs_line.png";
 import MainWorks from "../components/mainPage/MainWorks.astro";
+import { useLink } from "../utils/link";
 ---
 
 <Layout>
@@ -19,7 +20,7 @@ import MainWorks from "../components/mainPage/MainWorks.astro";
     <h2 class="content-title">Blog</h2>
     <div class="content-inner">
       <p>随時更新中！</p>
-      <a href="/blog/">ブログ一覧へ</a>
+      <a href={useLink("/blog/")}>ブログ一覧へ</a>
     </div>
   </section>
   <MainNews client:idle max={5} />
@@ -44,7 +45,7 @@ import MainWorks from "../components/mainPage/MainWorks.astro";
     <h2 class="content-title">Works</h2>
     <div class="content-inner">
       <MainWorks />
-      <a href="/works/" class="btn1">作品詳細へ</a>
+      <a href={useLink("/works/")} class="btn1">作品詳細へ</a>
     </div>
   </section>
   <section id="contact" class="content">

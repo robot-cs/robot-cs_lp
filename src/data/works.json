@@ -1,47 +1,47 @@
 [
   {
     "title": "クレーンゲームロボット",
-    "poster": "works/work1/arcade001_1.jpg",
-    "video": "works/work1/arcade001_simulation.mp4"
+    "poster": "/robot-cs_lp/works/work1/arcade001_1.jpg",
+    "video": "/robot-cs_lp/works/work1/arcade001_simulation.mp4"
   },
   {
     "title": "Ottoロボット",
-    "poster": "works/work2/otto.jpg",
-    "video": "works/work2/otto_demo.mp4"
+    "poster": "/robot-cs_lp/works/work2/otto.jpg",
+    "video": "/robot-cs_lp/works/work2/otto_demo.mp4"
   },
   {
     "title": "RCカー（ジョイスティック制御）",
-    "poster": "works/work3/RC_car.jpg",
-    "video": "works/work3/joystick-control-car_demo.mp4"
+    "poster": "/robot-cs_lp/works/work3/RC_car.jpg",
+    "video": "/robot-cs_lp/works/work3/joystick-control-car_demo.mp4"
   },
   {
     "title": "四足歩行ロボット（MePed）",
-    "poster": "works/work4/spider2.jpg",
-    "video": "works/work4/meped_demo.mp4"
+    "poster": "/robot-cs_lp/works/work4/spider2.jpg",
+    "video": "/robot-cs_lp/works/work4/meped_demo.mp4"
   },
   {
     "title": "きれい君1号（堀川エコロボット）",
-    "poster": "works/work5/きれい君1号.jpg",
-    "video": "works/work5/堀川エコロボット.mp4"
+    "poster": "/robot-cs_lp/works/work5/きれい君1号.jpg",
+    "video": "/robot-cs_lp/works/work5/堀川エコロボット.mp4"
   },
   {
     "title": "WiFiタンク",
-    "poster": "works/work6/wifi-tank.jpg",
-    "video": "works/work6/wifi-tank_demo.mp4"
+    "poster": "/robot-cs_lp/works/work6/wifi-tank.jpg",
+    "video": "/robot-cs_lp/works/work6/wifi-tank_demo.mp4"
   },
   {
     "title": "ペーパーアーム",
-    "poster": "works/work7/paper-arm.jpg",
-    "video": "works/work7/paper-arm_demo.mp4"
+    "poster": "/robot-cs_lp/works/work7/paper-arm.jpg",
+    "video": "/robot-cs_lp/works/work7/paper-arm_demo.mp4"
   },
   {
     "title": "R2D2組立アニメーション",
-    "poster": "works/work8/R2D2_img.png",
-    "video": "works/work8/R2D2組立アニメーション.mp4"
+    "poster": "/robot-cs_lp/works/work8/R2D2_img.png",
+    "video": "/robot-cs_lp/works/work8/R2D2組立アニメーション.mp4"
   },
   {
     "title": "3Dプリンター",
-    "poster": "works/work9/3dprinter.jpg",
-    "video": "works/work9/3dprinter_demo.mp4"
+    "poster": "/robot-cs_lp/works/work9/3dprinter.jpg",
+    "video": "/robot-cs_lp/works/work9/3dprinter_demo.mp4"
   }
 ]
