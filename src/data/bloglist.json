@@ -1,132 +1,16 @@
 {
   "blog": [
     {
-      "slug": "11",
-      "title": "Next.js 15でのデータフェッチング",
-      "description": "Server Actionsとキャッシュ制御の最新プラクティス",
-      "created": "2026-06-20T00:00:00.000Z",
-      "updated": "2026-06-23T00:00:00.000Z",
-      "tag": [
-        "Next.js",
-        "React",
-        "Frontend"
-      ]
-    },
-    {
-      "slug": "10",
-      "title": "朝の散歩を習慣化して気づいたこと",
-      "description": "午前中の集中力が明らかに向上した",
-      "created": "2026-06-10T00:00:00.000Z",
-      "updated": "2026-06-11T00:00:00.000Z"
-    },
-    {
-      "slug": "9",
-      "title": "2026年6月 第1週 ワークアウト",
-      "description": "ベンチプレスの自己ベスト更新",
-      "created": "2026-06-01T00:00:00.000Z",
-      "tag": [
-        "筋トレ",
-        "健康"
-      ]
-    },
-    {
-      "slug": "8",
-      "title": "次回の個人アプリ開発案",
-      "description": "No description",
-      "created": "2026-05-25T00:00:00.000Z",
-      "tag": [
-        "アイデア",
-        "React",
-        "個人開発"
-      ]
-    },
-    {
-      "slug": "7",
-      "title": "新作映画『アステロイド・シティ』視聴",
-      "description": "ウェス・アンダーソン特有の色彩美が光る一作",
-      "created": "2026-05-20T00:00:00.000Z",
-      "updated": "2026-05-21T00:00:00.000Z"
-    },
-    {
-      "slug": "6",
-      "title": "京都ひとり旅プラン",
-      "description": "No description",
-      "created": "2026-05-15T00:00:00.000Z",
-      "tag": [
-        "旅行",
-        "京都"
-      ]
-    },
-    {
-      "slug": "5",
-      "title": "TypeScript 5.x の新機能チェック",
-      "description": "Decorator周りの仕様変更についてのまとめ",
-      "created": "2026-05-10T00:00:00.000Z",
-      "updated": "2026-05-12T00:00:00.000Z",
-      "tag": [
-        "TypeScript",
-        "プログラミング"
-      ]
-    },
-    {
-      "slug": "4",
-      "title": "買い物リスト",
-      "description": "No description",
-      "created": "2026-05-01T00:00:00.000Z"
-    },
-    {
-      "slug": "3",
-      "title": "『プロジェクト・ヘイル・メアリー』読了",
-      "description": "圧倒的な科学的リアリティと感動の友情物語",
-      "created": "2026-04-28T00:00:00.000Z",
-      "tag": [
-        "SF",
-        "小説",
-        "読書記録"
-      ]
-    },
-    {
-      "slug": "2",
-      "title": "Tailwind CSSの実践的コンポーネント設計",
-      "description": "再利用性を高めるためのクラス分割手法について",
-      "created": "2026-04-25T00:00:00.000Z",
-      "updated": "2026-04-26T00:00:00.000Z",
-      "tag": [
-        "Tech",
-        "Frontend",
-        "CSS"
-      ]
-    },
-    {
       "slug": "1",
-      "title": "a",
-      "description": "a",
-      "created": "2026-04-25T00:00:00.000Z",
-      "updated": "2026-06-23T00:00:00.000Z",
+      "title": "ブログ始めました",
+      "description": "ブログ機能に乞うご期待！",
+      "created": "2026-04-29T00:00:00.000Z",
       "tag": [
-        "a",
-        "b"
+        "挨拶"
       ]
     }
   ],
   "tags": [
-    "a",
-    "b",
-    "Next.js",
-    "React",
-    "Frontend",
-    "Tech",
-    "CSS",
-    "SF",
-    "小説",
-    "読書記録",
-    "TypeScript",
-    "プログラミング",
-    "旅行",
-    "京都",
-    "アイデア",
-    "個人開発",
-    "筋トレ",
-    "健康"
+    "挨拶"
   ]
 }
