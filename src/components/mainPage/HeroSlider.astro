@@ -1,0 +1,81 @@
+---
+// 必要に応じてCSSをインポート
+import "@splidejs/splide/css";
+import { Image } from "astro:assets";
+import work1 from "../../assets/workimg/3dprinter.jpg";
+import work2 from "../../assets/workimg/RC_car.jpg";
+import work3 from "../../assets/workimg/arcade001_1.jpg";
+import work4 from "../../assets/workimg/obstacle-avoiding-car.jpg";
+import work5 from "../../assets/workimg/otto.jpg";
+import work6 from "../../assets/workimg/paper-arm.jpg";
+import work7 from "../../assets/workimg/spider2.jpg";
+
+const workimgs = [work1, work2, work3, work4, work5, work6, work7];
+---
+
+<section class="splide" aria-label="作品スライダー">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        workimgs.map((value) => (
+          <li class="splide__slide">
+            <Image src={value} alt="main img" format="webp" quality={70} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  import Splide from "@splidejs/splide";
+
+  // DOMの読み込み完了後に初期化
+  document.addEventListener("DOMContentLoaded", () => {
+    const splide = new Splide(".splide", {
+      type: "loop", // ループ再生
+      drag: true, // ドラッグ操作を有効に
+      autoplay: true, // 自動再生を有効に
+      interval: 3000, // 3秒間隔
+      pauseOnHover: true, // マウスホバーで一時停止
+      pauseOnFocus: true, // フォーカス時（クリック中など）に一時停止
+      resetProgress: false, // 操作後にプロパティをリセットしない（再開に必要）
+    });
+
+    // ★「操作後に自動再生を再開する」ロジック
+    // Splideは標準で「操作後に再開」する挙動を持っていますが、
+    // より確実に「5秒間放置したら再開」としたい場合はイベント監視を追加します。
+
+    let idleTimer: ReturnType<typeof setTimeout>;
+
+    splide.on("drag", () => {
+      splide.Components.Autoplay.pause(); // ドラッグ中は止める
+      clearTimeout(idleTimer);
+    });
+
+    splide.on("dragged", () => {
+      // ドラッグが終わってから5秒後に再開
+      idleTimer = setTimeout(() => {
+        splide.Components.Autoplay.play();
+      }, 5000);
+    });
+
+    splide.mount();
+  });
+</script>
+
+<style>
+  .splide__slide {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+    border-radius: 12px;
+    font-size: 2rem;
+  }
+  .splide__slide > * {
+    max-width: 100%;
+    object-fit: contain;
+  }
+</style>

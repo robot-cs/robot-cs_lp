@@ -1,0 +1,70 @@
+---
+import work1 from "../../assets/workimg/spider2.jpg";
+import work2 from "../../assets/workimg/otto.jpg";
+import work3 from "../../assets/workimg/arcade001_1.jpg";
+import { Image } from "astro:assets";
+---
+
+<div class="mainworks">
+  <div class="work">
+    <Image src={work1} alt="meped" format="webp" quality={70} class="workimg" />
+    <h3>４足歩行ロボット</h3>
+  </div>
+  <div class="work">
+    <Image src={work2} alt="otto" format="webp" quality={70} class="workimg" />
+    <h3>２足歩行ロボット</h3>
+  </div>
+  <div class="work">
+    <Image
+      src={work3}
+      alt="arcadegame"
+      format="webp"
+      quality={70}
+      class="workimg"
+    />
+    <h3>クレーンゲームロボット</h3>
+  </div>
+</div>
+<style>
+  .mainworks {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 16px 24px;
+    justify-content: center;
+    margin: 32px 0;
+  }
+  .work {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+    border: 2px solid gray;
+
+    .workimg {
+      max-width: 100%;
+      object-fit: contain;
+      height: auto;
+    }
+    h3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background: var(--background);
+      margin: 0;
+      padding: 16px 0;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .mainworks {
+      grid-template-columns: auto auto;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .mainworks {
+      grid-template-columns: auto;
+    }
+  }
+</style>

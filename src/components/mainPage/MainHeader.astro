@@ -1,0 +1,172 @@
+---
+import { Image } from "astro:assets";
+import { icon, library } from "@fortawesome/fontawesome-svg-core";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faXTwitter);
+const XIcon = icon(faXTwitter);
+import logoIcon from "../../assets/my-icon.webp";
+---
+
+<header class="header">
+  <a href="" class="header-title">
+    <Image src={logoIcon} quality={70} alt="my-icon" class="header-logo" />
+    <h1>RobotCreators</h1>
+  </a>
+  <nav class="nav">
+    <div class="PCnav">
+      <a href="/#about" id="nav-about">About</a>
+      <a href="/works" id="nav-works">Works</a>
+      <a href="/blog" id="nav-blog">Blog</a>
+      <a href="/#contact" id="nav-contact">Contact</a>
+      <a
+        id="nav-twitter"
+        href="https://twitter.com/Robot_CS"
+        target="_blank"
+        aria-hidden="true"
+        rel="noopener noreferrer"
+        ><span set:html={XIcon.html} />
+      </a>
+    </div>
+    <label for="navcheck" class="SPnav">
+      <div class="lines">
+        <div class="line_1"></div>
+        <div class="line_2"></div>
+        <div class="line_3"></div>
+      </div>
+      <div class="nav2">
+        <input type="checkbox" id="navcheck" />
+        <nav>
+          <a href="/#about" id="nav-about">About</a>
+          <a href="/works" id="nav-works">Works</a>
+          <a href="/blog" id="nav-blog">Blog</a>
+          <a href="/#contact" id="nav-contact">Contact</a>
+          <a
+            id="nav-twitter"
+            href="https://twitter.com/Robot_CS"
+            target="_blank"
+            aria-hidden="true"
+            rel="noopener noreferrer"
+            ><span set:html={XIcon.html} />
+          </a>
+        </nav>
+      </div>
+    </label>
+  </nav>
+</header>
+
+<style>
+  .header {
+    height: 170px;
+    background: gainsboro;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    position: relative;
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    a:hover {
+      color: indigo;
+    }
+    .header-title {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      .header-title h1 {
+        font-size: 40px;
+      }
+      .header-logo {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .nav {
+      font-size: 18px;
+      a {
+        margin: 0 8px;
+      }
+    }
+  }
+  .SPnav {
+    display: flex;
+
+    .lines {
+      width: 56px;
+      height: 56px;
+      margin: 4px;
+      position: relative;
+      .line_1 {
+        top: 25%;
+      }
+      .line_2 {
+        top: 50%;
+      }
+      .line_3 {
+        top: 75%;
+      }
+    }
+    .lines > * {
+      display: block;
+      position: absolute;
+      background: var(--black);
+      width: 40px;
+      height: 2px;
+      right: 0;
+      transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+    }
+  }
+  .SPnav:has(.nav2 input:checked) {
+    .line_1 {
+      transform: translateY(14px) rotate(45deg);
+    }
+    .line_2 {
+      opacity: 0;
+    }
+    .line_3 {
+      transform: translateY(-14px) rotate(-45deg);
+    }
+  }
+  .nav2 {
+    display: none;
+    position: absolute;
+    top: 170px;
+    left: 0;
+    width: 100dvw;
+    height: calc(100dvh - 170px);
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    input {
+      display: none;
+    }
+  }
+  .nav2 a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--background);
+    padding-bottom: 16px;
+    font-size: 20px;
+    margin: 0;
+  }
+  .nav2:has(input:checked) {
+    display: block;
+  }
+  @media screen and (max-width: 720px) {
+    .PCnav {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 720px) {
+    .SPnav {
+      display: none;
+    }
+  }
+</style>

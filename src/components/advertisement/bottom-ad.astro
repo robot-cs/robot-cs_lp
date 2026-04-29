@@ -1,0 +1,40 @@
+<div class="bottom_ad" id="bottom_ad">
+  <button
+    class="ad_btn"
+    onclick="document.querySelector('#bottom_ad').style.display='none'"
+    >×</button
+  >
+  <a href="" target="_blank"
+    ><img class="ad_img" src="/advertisement/koukoku1.png" /></a
+  >
+</div>
+<style>
+  .bottom_ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 4px 8px;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(245, 242, 242);
+    overflow: hidden;
+    .ad_img {
+      max-height: 150px;
+      max-width: 100%;
+      aspect-ratio: 13 / 2;
+    }
+    .ad_btn {
+      padding: 0;
+      margin: 0;
+      font-size: 20px;
+      background: inherit;
+      border: none;
+      cursor: pointer;
+    }
+  }
+</style>
+<script></script>

@@ -1,0 +1,14 @@
+:root {
+  --theme: #1498ce;
+  --black: #031432;
+  --background: gainsboro;
+}
+html {
+  font-size: 100%; /* 16px */
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--black);
+  font-family: "Sawarabi Gothic";
+  background-color: var(--background);
+}

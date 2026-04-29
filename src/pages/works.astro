@@ -1,0 +1,25 @@
+---
+import BlogHeader from "../components/blog/BlogHeader.astro";
+import BlogFooter from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import WorkCards from "../components/WorkCards.vue";
+---
+
+<Layout>
+  <BlogHeader />
+  <main>
+    <h1>Works</h1>
+    <p>作品紹介</p>
+    <WorkCards client:load />
+  </main>
+  <BlogFooter />
+</Layout>
+<style>
+  main {
+    min-height: 85vh;
+    text-align: center;
+    h1 {
+      font-size: 40px;
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import { icon, library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faXTwitter,
+  faGithub,
+  faLine,
+} from "@fortawesome/free-brands-svg-icons";
+import officialLinks from "../data/officialLinks.json";
+library.add(faXTwitter, faGithub, faLine);
+const XIcon = icon(faXTwitter);
+const GithubIcon = icon(faGithub);
+const LineIcon = icon(faLine);
+---
+
+<footer class="footer">
+  <a href={officialLinks.X}
+    ><span class="footer_icon" set:html={XIcon.html} /></a
+  >
+  <a href={officialLinks.github}
+    ><span class="footer_icon" set:html={GithubIcon.html} /></a
+  >
+  <a href={officialLinks.line}
+    ><span class="footer_icon" set:html={LineIcon.html} /></a
+  >
+  <p class="copyright">&copy; 2026 RobotCreators All rights reserved.</p>
+</footer>
+<style>
+  .footer {
+    position: relative;
+    background: rgb(25, 24, 27);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: rgb(198, 189, 233);
+
+    a {
+      color: inherit;
+    }
+    .footer_icon {
+      font-size: 32px;
+      color: inherit;
+    }
+    .copyright {
+      color: inherit;
+      margin: 4px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 10px;
+    }
+  }
+</style>
