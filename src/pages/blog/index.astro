@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BlogHeader from "../../components/blog/BlogHeader.astro";
+import BlogFooter from "../../components/Footer.astro";
+import BlogList from "../../components/blog/BlogList.vue";
+---
+
+<Layout>
+  <BlogHeader />
+  <main>
+    <h1>Blog</h1>
+    <BlogList client:load />
+  </main>
+  <BlogFooter />
+</Layout>
+<style>
+  main {
+    min-height: 85vh;
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+  }
+</style>

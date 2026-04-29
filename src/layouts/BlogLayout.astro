@@ -1,0 +1,61 @@
+---
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "../styles/style.css";
+import BlogHeader from "../components/blog/BlogHeader.astro";
+import BlogFooter from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RobotCreators HP" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>東京理科大学 RobotCreators HP</title>
+    <!-- google search console -->
+    <meta
+      name="google-site-verification"
+      content="x7btwmxiZPg_HTzW3Tfsl3a9fx2D6Ce2W6u7D3ExmqQ"
+    />
+  </head>
+  <body>
+    <BlogHeader />
+    <article>
+      <slot />
+    </article>
+    <BlogFooter />
+  </body>
+</html>
+
+<style>
+  html {
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  article {
+    max-width: 720px;
+    min-height: 90dvh;
+    margin: 24px auto;
+    border-radius: 16px;
+    background: white;
+    padding: 16px;
+    box-shadow: 5px 5px 10px -4px black;
+  }
+</style>

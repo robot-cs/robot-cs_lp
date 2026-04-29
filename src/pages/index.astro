@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MainHeader from "../components/mainPage/MainHeader.astro";
+import Footer from "../components/Footer.astro";
+import MainNews from "../components/mainPage/MainNews.vue";
+import { Image } from "astro:assets";
+
+import HeroSlider from "../components/mainPage/HeroSlider.astro";
+import lineQr from "../assets/robotcs_line.png";
+import MainWorks from "../components/mainPage/MainWorks.astro";
+---
+
+<Layout>
+  <MainHeader />
+  <div>
+    <HeroSlider />
+  </div>
+  <section class="content">
+    <h2 class="content-title">Blog</h2>
+    <div class="content-inner">
+      <p>随時更新中！</p>
+      <a href="/blog/">ブログ一覧へ</a>
+    </div>
+  </section>
+  <MainNews client:idle max={5} />
+  <section id="about" class="content">
+    <h2 class="content-title">About</h2>
+    <div class="content-inner">
+      <p class="fade">
+        RobotCreators<br />
+        ロボット製作サークルとして設立<br />
+        電子工作、CAD設計、プログラミング等を行います<br />
+        部員数は9名（2026年4月現在）（機械航空宇宙工学科、電気電子情報工学科、先端物理学科の学生が所属）<br
+        />
+        メールアドレス<span id="mail"> :robot-cs@outlook.jp</span>
+      </p>
+      <p class="fade">
+        ロボット好きのためのサークルです。毎週部室で各々が作りたいモノを好きなように作っています。<br
+        />また、毎週火曜日には外部の小学生にプログラミングを教えています。
+      </p>
+    </div>
+  </section>
+  <section class="content" style="text-align:center;">
+    <h2 class="content-title">Works</h2>
+    <div class="content-inner">
+      <MainWorks />
+      <a href="/works/" class="btn1">作品詳細へ</a>
+    </div>
+  </section>
+  <section id="contact" class="content">
+    <h2 class="content-title fade">Contact</h2>
+    <div class="content-inner" style="text-align:center;">
+      <p>お問い合わせ,ご支援のご連絡等は以下の公式LINEから</p>
+      <p>↓　↓　↓　↓</p>
+      <div class="for-sp" id="help">＼ タップで登録 ／</div>
+      <a href="https://lin.ee/R6I4seZ">
+        <Image src={lineQr} alt="Line" format="webp" />
+      </a>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .heroImg {
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+    animation: SlideIn 1.6s;
+  }
+  @keyframes SlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(64px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .content {
+    margin: 52px 24px;
+
+    .content-title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 24px;
+      padding-bottom: 16px;
+    }
+    .content-inner {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import { icon, library } from "@fortawesome/fontawesome-svg-core";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faXTwitter);
+const XIcon = icon(faXTwitter);
+import logoIcon from "../../assets/my-icon.webp";
+import { useLink } from "../../utils/link";
+---
+
+<header class="header">
+  <a href={useLink("")} class="header-title">
+    <Image src={logoIcon} quality={70} alt="my-icon" class="header-logo" />
+    <h1>RobotCreators</h1>
+  </a>
+  <nav class="nav">
+    <a href="#about" id="nav-about">About</a>
+    <a href="/works" id="nav-works">Works</a>
+    <a href="/blog" id="nav-news">Blog</a>
+    <a href="/#contact" id="nav-contact">Contact</a>
+    <a
+      id="nav-twitter"
+      href="https://twitter.com/Robot_CS"
+      target="_blank"
+      aria-hidden="true"
+      rel="noopener noreferrer"
+      ><span set:html={XIcon.html} />
+    </a>
+  </nav>
+</header>
+
+<style>
+  .header {
+    height: 60px;
+    background: var(--background);
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    a:hover {
+      color: indigo;
+    }
+    .header-title {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      .header-title h1 {
+        font-size: 40px;
+      }
+      .header-logo {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .nav {
+      font-size: 18px;
+      a {
+        margin: 0 8px;
+      }
+    }
+  }
+</style>

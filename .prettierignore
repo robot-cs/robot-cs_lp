@@ -1,0 +1,17 @@
+# Ignore artifacts:
+build
+coverage
+.astro
+dist
+.git
+node_modules
+pnpm-lock.yaml
+public/
+
+# Ignore JS/TS files (formatted by oxfmt)
+**/*.js
+**/*.jsx
+**/*.ts
+**/*.tsx
+**/*.mjs
+**/*.cjs
