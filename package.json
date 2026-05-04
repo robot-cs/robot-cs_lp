@@ -12,6 +12,7 @@
     "check:fix": "oxlint . --fix && oxfmt . && prettier \"**/*.astro\" --write"
   },
   "dependencies": {
+    "@astrojs/mdx": "^5.0.4",
     "@astrojs/vue": "^6.0.1",
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
