@@ -1,0 +1,81 @@
+name: Add Blog And Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      content:
+        required: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm" # pnpmを使っているならここをpnpmに
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Validate Input Content
+        run: |
+          # 入力が空かどうかチェック (-z は文字列が空なら真)
+          if [ -z "${{ github.event.inputs.content }}" ]; then
+            echo "Error: Content is empty. Aborting workflow."
+            exit 1 # ワークフローを失敗させて中断する
+          fi
+
+      - name: Calculate Next slug
+        id: get_slug
+        run: |
+          RESULT=$(node scripts/getNextBlogtitle.mjs)
+          echo "$RESULT" >> $GITHUB_OUTPUT
+
+      - name: Create new blog file
+        run: |
+          FILENAME="src/content/blog/${{steps.get_slug.outputs.SLUG}}.mdx"
+
+          cat <<EOF > $FILENAME
+          ${{github.event.inputs.content}}
+          EOF
+
+      - name: Update Bloglist
+        run: node scripts/updateBloglist.mjs
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Add new blog post: ${{steps.get_slug.outputs.SLUG}}"
+          git push
+
+      - name: Build
+        run: pnpm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
