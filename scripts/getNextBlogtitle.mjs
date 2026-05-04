@@ -1,4 +1,4 @@
-import blogData from "../src/data/bloglist.json" with {type:"json"};
+import blogData from path.join(process.cwd(), "src/content/blog") with {type:"json"};
 
 function getNextNewstitle(){
     const nowslugs=blogData.blog.map((value)=>value.slug);

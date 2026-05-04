@@ -1,20 +1,34 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 
-// パスの設定
-const BLOG_DIR = path.resolve('../src/content/blog');
-const OUTPUT_FILE = path.resolve('../src/data/bloglist.json'); // publicに置くとURLでアクセス可能
+// --- パス解決のロジックを修正 ---
+// 1. このスクリプトファイル自体の絶対パスを取得
+const __filename = fileURLToPath(import.meta.url);
+// 2. scripts フォルダのパスを取得
+const __dirname = path.dirname(__filename);
+// 3. プロジェクトのルート（scriptsの一つ上）を特定
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+
+// 全てのパスを PROJECT_ROOT を起点に結合する
+const BLOG_DIR = path.join(PROJECT_ROOT, 'src/content/blog');
+const OUTPUT_FILE = path.join(PROJECT_ROOT, 'src/data/bloglist.json');
+// --------------------------------
 
 function generateBlogJson() {
-  // 1. ディレクトリ内のファイル一覧を取得
+  // ディレクトリが存在するかチェック（防御策）
+  if (!fs.existsSync(BLOG_DIR)) {
+    console.error(`❌ Error: Directory not found: ${BLOG_DIR}`);
+    process.exit(1);
+  }
+
   const files = fs.readdirSync(BLOG_DIR).filter(file => file.endsWith('.md') || file.endsWith('.mdx'));
 
-  // 2. 各ファイルを解析してデータを取り出す
   const blogList = files.map(file => {
     const filePath = path.join(BLOG_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
-    const { data } = matter(content); // フロントマターの解析
+    const { data } = matter(content);
 
     return {
       slug: file.replace(/\.mdx?$/, ''),
@@ -22,28 +36,34 @@ function generateBlogJson() {
       description: data.description || 'No description',
       created: data.created,
       updated: data.updated || undefined,
-      tag:data.tag??undefined
-      // 必要に応じてタグや画像パスなどを追加
+      tag: data.tag ?? undefined
     };
   });
-  const tags=[];
-  for(let file of files){
+
+  const tags = [];
+  // タグの収集（blogList作成時に一緒にやると効率的ですが、一旦ロジックは維持）
+  for (const file of files) {
     const filePath = path.join(BLOG_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
-    const { data } = matter(content); // フロントマターの解析
+    const { data } = matter(content);
 
-    if(!data.tag)continue;
-    for(let tag of data.tag){
-      if(!tags.includes(tag))tags.push(tag);
+    if (!data.tag || !Array.isArray(data.tag)) continue;
+    for (const tag of data.tag) {
+      if (!tags.includes(tag)) tags.push(tag);
     }
   }
 
-  // 3. 日付順にソート（新しい順）
-  blogList.reverse().sort((a, b) => new Date(b.created) - new Date(a.created));
+  // 日付順にソート（新しい順）
+  blogList.sort((a, b) => new Date(b.created) - new Date(a.created));
 
-  const result={blog:blogList,tags:tags};
+  const result = { blog: blogList, tags: tags };
 
-  // 4. JSONとして書き出し
+  // 出力先ディレクトリがない場合は作成
+  const outputDir = path.dirname(OUTPUT_FILE);
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));
 
   console.log(`✅ Success: ${blogList.length} posts saved to ${OUTPUT_FILE}`);
