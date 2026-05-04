@@ -1,13 +1,11 @@
 name: Add Blog And Deploy
 
 on:
-  workflow_dispatch:
-    inputs:
-      content:
-        required: true
+  repository_dispatch:
+    types: [add_blog] # イベントタイプを指定
 
 permissions:
-  contents: read
+  contents: write # read から write に変更（ファイルをPushするため）
   pages: write
   id-token: write
 
@@ -25,16 +23,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "pnpm" # pnpmを使っているならここをpnpmに
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
 
       - name: Validate Input Content
         run: |
-          # 入力が空かどうかチェック (-z は文字列が空なら真)
-          if [ -z "${{ github.event.inputs.content }}" ]; then
+          # inputs ではなく client_payload を参照するように変更
+          if [ -z "${{ github.event.client_payload.content }}" ]; then
             echo "Error: Content is empty. Aborting workflow."
-            exit 1 # ワークフローを失敗させて中断する
+            exit 1
           fi
 
       - name: Calculate Next slug
@@ -47,8 +45,9 @@ jobs:
         run: |
           FILENAME="src/content/blog/${{steps.get_slug.outputs.SLUG}}.mdx"
 
+          # inputs ではなく client_payload を参照
           cat <<EOF > $FILENAME
-          ${{github.event.inputs.content}}
+          ${{github.event.client_payload.content}}
           EOF
 
       - name: Update Bloglist
