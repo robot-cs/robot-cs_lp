@@ -1,18 +1,16 @@
 {
   "blog": [
     {
-      "slug": "2",
-      "title": "テスト",
-      "description": "No description",
-      "created": "2026-6-4 20:1:0"
-    },
-    {
       "slug": "1",
       "title": "ブログ始めました",
       "description": "ブログ機能に乞うご期待！",
       "created": "2026-04-29T00:00:00.000Z",
-      "tag": ["挨拶"]
+      "tag": [
+        "挨拶"
+      ]
     }
   ],
-  "tags": ["挨拶"]
+  "tags": [
+    "挨拶"
+  ]
 }
