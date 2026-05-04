@@ -20,6 +20,12 @@
       "title": "テスト",
       "description": "No description",
       "created": "concat(formatDateTime(2026-6-4 20:1:0, 'yyyy-MM-ddTHH:mm:ss'), '+09:00')"
+    },
+    {
+      "slug": "4",
+      "title": "テスト",
+      "description": "No description",
+      "created": "YYYY-06-DDT20:06:SS+9:00"
     }
   ],
   "tags": [
