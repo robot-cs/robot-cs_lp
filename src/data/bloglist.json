@@ -1,6 +1,12 @@
 {
   "blog": [
     {
+      "slug": "2",
+      "title": "第1回　ブログ始めました",
+      "description": "No description",
+      "created": "2026-05-10T00:30:00.000Z"
+    },
+    {
       "slug": "1",
       "title": "ブログ始めました",
       "description": "ブログ機能に乞うご期待！",
