@@ -8,3 +8,11 @@ export interface WorkType {
   poster: string;
   video: string;
 }
+export interface BlogType{
+  slug:string;
+  title:string;
+  description?:string;
+  created:string;
+  updated?:string;
+  tag?:string[] | string;
+}

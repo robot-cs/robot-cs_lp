@@ -1,67 +1,73 @@
 <template>
-  <section class="search">
-    <div class="tags">
-      <div class="selecting">
-        タグ検索：
-        <p v-for="(value, index) in selectingTags" :key="index" class="onetag">
-          {{ value }}<span @click="removeTag(value)">×</span>
-        </p>
-        <button
-          class="plusbtn"
-          @click="() => (istagselectopen = !istagselectopen)"
-        >
-          {{ !istagselectopen ? "＋" : "ー" }}
-        </button>
-      </div>
-      <select
-        class="tagselect"
-        name="tag"
-        v-model="selectingTags"
-        multiple
-        v-show="istagselectopen"
-      >
-        <option v-for="(value, index) in allTags" :key="index" :value="value">
-          {{ value }}
-        </option>
-      </select>
-      <div
-        class="tagcover"
-        v-show="istagselectopen"
-        @click="istagselectopen = false"
-      ></div>
-    </div>
-    <select name="sorting" class="sort" v-model="selectvalue">
-      <option value="updated_DESC">最終更新日が新しい順</option>
-      <option value="updated_ASC">最終更新日が古い順</option>
-      <option value="created_DESC">作成日が新しい順</option>
-      <option value="created_ASC">作成日が古い順</option>
-      <option value="title">タイトル</option>
-    </select>
-  </section>
-  <section class="posts">
-    <a
-      v-for="value in optimizedPosts"
-      :key="value.slug"
-      class="post"
-      :href="useLink(blogURL + value.slug)"
-      :id="`blog-${value.slug}`"
-    >
-      <p class="date">
-        {{ dateToStr(new Date(value.updated ?? value.created)) }}
-        <span v-if="value.updated" v-html="penIcon.html" />
-      </p>
-      <h3>{{ value.title }}</h3>
+  <div>
+    <section class="search">
       <div class="tags">
-        <span
-          v-if="value.tag"
-          v-for="(value2, index2) in value.tag"
-          :key="index2"
-          class="tag"
-          >{{ value2 }}</span
+        <div class="selecting">
+          タグ検索：
+          <p
+            v-for="(value, index) in selectingTags"
+            :key="index"
+            class="onetag"
+          >
+            {{ value }}<span @click="removeTag(value)">×</span>
+          </p>
+          <button
+            class="plusbtn"
+            @click="() => (istagselectopen = !istagselectopen)"
+          >
+            {{ !istagselectopen ? "＋" : "ー" }}
+          </button>
+        </div>
+        <select
+          class="tagselect"
+          name="tag"
+          v-model="selectingTags"
+          multiple
+          v-show="istagselectopen"
         >
+          <option v-for="(value, index) in allTags" :key="index" :value="value">
+            {{ value }}
+          </option>
+        </select>
+        <div
+          class="tagcover"
+          v-show="istagselectopen"
+          @click="istagselectopen = false"
+        ></div>
       </div>
-    </a>
-  </section>
+      <select name="sorting" class="sort" v-model="selectvalue">
+        <option value="updated_DESC">最終更新日が新しい順</option>
+        <option value="updated_ASC">最終更新日が古い順</option>
+        <option value="created_DESC">作成日が新しい順</option>
+        <option value="created_ASC">作成日が古い順</option>
+        <option value="title">タイトル</option>
+      </select>
+    </section>
+    <section class="posts">
+      <a
+        v-for="value in optimizedPosts"
+        :key="value.slug"
+        class="post"
+        :href="useLink(blogURL + value.slug)"
+        :id="`blog-${value.slug}`"
+      >
+        <p class="date">
+          {{ dateToStr(new Date(value.updated ?? value.created)) }}
+          <span v-if="value.updated ?? null" v-html="penIcon.html" />
+        </p>
+        <h3>{{ value.title }}</h3>
+        <div class="tags">
+          <span
+            v-if="value.tag"
+            v-for="(value2, index2) in value.tag"
+            :key="index2"
+            class="tag"
+            >{{ value2 }}</span
+          >
+        </div>
+      </a>
+    </section>
+  </div>
 </template>
 <script setup lang="ts">
 import { useLink } from "../../utils/link";
@@ -69,19 +75,20 @@ import blogData from "../../data/bloglist.json";
 import { icon, library } from "@fortawesome/fontawesome-svg-core";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { ref, onMounted, watch } from "vue";
+import type { BlogType } from "../../types";
 library.add(faPen);
 const penIcon = icon(faPen);
 
 const blogURL = "blog/";
 
-const allPosts = blogData.blog;
+const allPosts: BlogType[] = blogData.blog;
 const allTags = blogData.tags;
 const selectingTags = ref<string[]>([]);
 const selectvalue = ref<string>("updated_DESC");
 const istagselectopen = ref<boolean>(false);
 let pagenate = 1;
 const pageLength = 20;
-let optimizedPosts = ref(
+let optimizedPosts = ref<BlogType[]>(
   allPosts.filter(
     (_value, index) =>
       pageLength * (pagenate - 1) <= index && pageLength * pagenate,
@@ -89,7 +96,6 @@ let optimizedPosts = ref(
 );
 onMounted(() => {
   const params = new URLSearchParams(window.location.search);
-  console.log(window.location.href);
   if (params.get("sort")) {
     selectvalue.value = params.get("sort") ?? "updated_DESC";
     refilterandsort();
