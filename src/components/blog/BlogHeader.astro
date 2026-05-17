@@ -120,6 +120,7 @@ import { useLink } from "../../utils/link";
         }
       }
       & .accordion {
+	z-index:-1;
         display: grid;
         grid-template-rows: 0fr;
         transition: grid-template-rows 0.6s ease;
@@ -158,6 +159,7 @@ import { useLink } from "../../utils/link";
       }
       & .accordion {
         grid-template-rows: 1fr;
+	z-index:1000;
       }
     }
   }
