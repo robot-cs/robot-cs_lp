@@ -3,6 +3,7 @@ import BlogHeader from "../components/blog/BlogHeader.astro";
 import BlogFooter from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import WorkCards from "../components/WorkCards.vue";
+import BottomAd from "../components/advertisement/bottom-ad.astro";
 ---
 
 <Layout>
@@ -12,6 +13,7 @@ import WorkCards from "../components/WorkCards.vue";
     <p>作品紹介</p>
     <WorkCards client:load />
   </main>
+  <BottomAd />
   <BlogFooter />
 </Layout>
 <style>

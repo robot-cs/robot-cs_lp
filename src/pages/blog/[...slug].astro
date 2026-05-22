@@ -4,6 +4,7 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import { icon, library } from "@fortawesome/fontawesome-svg-core";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { useLink } from "../../utils/link";
+import BottomAd from "../../components/advertisement/bottom-ad.astro";
 
 library.add(faTag);
 const tagIcon = icon(faTag);
@@ -57,6 +58,7 @@ function dateToStr(date: Date) {
     <hr />
     <a href={useLink("/blog")}>ブログ一覧へ ></a>
   </div>
+  <BottomAd />
 </BlogLayout>
 <style>
   .hero {
@@ -95,10 +97,10 @@ function dateToStr(date: Date) {
   .markdown {
     margin: 8px 32px;
     min-height: 60dvh;
-    img{
-      width:100%;
-      height:auto;
-      object-fit:contain;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   }
   .bloglink {
