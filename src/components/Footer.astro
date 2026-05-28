@@ -4,12 +4,14 @@ import {
   faXTwitter,
   faGithub,
   faLine,
+  faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 import officialLinks from "../data/officialLinks.json";
-library.add(faXTwitter, faGithub, faLine);
+library.add(faXTwitter, faGithub, faLine,faInstagram);
 const XIcon = icon(faXTwitter);
 const GithubIcon = icon(faGithub);
 const LineIcon = icon(faLine);
+const InstaIcon = icon(faInstagram);
 ---
 
 <footer class="footer">
@@ -21,6 +23,9 @@ const LineIcon = icon(faLine);
   >
   <a href={officialLinks.line}
     ><span class="footer_icon" set:html={LineIcon.html} /></a
+  >
+  <a href={officialLinks.instagram}
+    ><span class="footer_icon" set:html={InstaIcon.html} /></a
   >
   <p class="copyright">&copy; 2026 RobotCreators All rights reserved.</p>
 </footer>
