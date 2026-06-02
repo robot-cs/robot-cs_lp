@@ -1,6 +1,17 @@
 {
   "blog": [
     {
+      "slug": "5",
+      "title": "失敗談など",
+      "description": "No description",
+      "created": "2026-06-02T02:22:00.000Z",
+      "tag": [
+        "雑談",
+        "3Dプリンター",
+        "卓上バンドソー"
+      ]
+    },
+    {
       "slug": "4",
       "title": "料理",
       "description": "No description",
@@ -42,6 +53,8 @@
     "挨拶",
     "雑談",
     "料理",
-    "飯"
+    "飯",
+    "3Dプリンター",
+    "卓上バンドソー"
   ]
 }
