@@ -10,6 +10,7 @@ import lineQr from "../assets/robotcs_line.png";
 import MainWorks from "../components/mainPage/MainWorks.astro";
 import { useLink } from "../utils/link";
 import BottomAd from "../components/advertisement/bottom-ad.astro";
+import PopupAd from "../components/advertisement/popup-ad.astro";
 ---
 
 <Layout>
@@ -21,7 +22,7 @@ import BottomAd from "../components/advertisement/bottom-ad.astro";
     <h2 class="content-title">Blog</h2>
     <div class="content-inner">
       <p>随時更新中！</p>
-      <a href={useLink("/blog/")}>ブログ一覧へ</a>
+      <a href={useLink("/blog/")} class="btn1">ブログ一覧へ</a>
     </div>
   </section>
   <MainNews client:idle max={5} />
@@ -60,6 +61,7 @@ import BottomAd from "../components/advertisement/bottom-ad.astro";
       </a>
     </div>
   </section>
+  <PopupAd>
   <BottomAd />
   <Footer />
 </Layout>
@@ -98,5 +100,21 @@ import BottomAd from "../components/advertisement/bottom-ad.astro";
       width: fit-content;
       margin: 0 auto;
     }
+    .btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  .btn1:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
   }
 </style>
