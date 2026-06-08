@@ -1,6 +1,15 @@
 {
   "blog": [
     {
+      "slug": "6",
+      "title": "第5回 共通ワーク班の活動紹介",
+      "description": "No description",
+      "created": "2026-06-07T17:41:00.000Z",
+      "tag": [
+        ""
+      ]
+    },
+    {
       "slug": "5",
       "title": "失敗談など",
       "description": "No description",
@@ -55,6 +64,7 @@
     "料理",
     "飯",
     "3Dプリンター",
-    "卓上バンドソー"
+    "卓上バンドソー",
+    ""
   ]
 }
