@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BlogHeader from "../../components/blog/BlogHeader.astro";
+import Footer from "../../components/Footer.astro";
+import PdfVuewer from "../../components/PdfVuewer.vue";
+---
+
+<Layout>
+  <BlogHeader />
+  <main>
+    <h1>キャチロボコンテスト2026<br />特設ページ</h1>
+    <h2>About Us</h2>
+    <PdfVuewer
+      url="/robot-cs_lp/ロボットクリエーターズの紹介.pdf"
+      pagelen={5}
+      client:only="vue"
+    />
+  </main>
+  <Footer />
+</Layout>
+<style>
+  main {
+    min-height: 95dvh;
+  }
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  h2::before,
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: black;
+  }
+</style>
