@@ -1,0 +1,110 @@
+---
+import { getCollection, render } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { icon, library } from "@fortawesome/fontawesome-svg-core";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { useLink } from "../../utils/link";
+import BottomAd from "../../components/advertisement/bottom-ad.astro";
+
+library.add(faTag);
+const tagIcon = icon(faTag);
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await render(post);
+
+function dateToStr(date: Date) {
+  const y = date.getFullYear();
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  const isThisyear = y === new Date().getFullYear();
+
+  return `${isThisyear ? "" : y + "年"}${m}月${d}日`;
+}
+---
+
+<BlogLayout>
+  <div class="hero">
+    <h1>{post.data.title}</h1>
+    <div class="hero_info">
+      <div class="hero_tags">
+        {
+          post.data.tag &&
+            post.data.tag.map((value) => (
+              <a class="hero_tag" href={useLink("/blog/?tag=" + value, false)}>
+                <span set:html={tagIcon.html} />
+                {value}
+              </a>
+            ))
+        }
+      </div>
+      <div class="hero_dates">
+        <p>作成日：{dateToStr(post.data.created)}</p>
+        {post.data.updated && <p>更新日：{dateToStr(post.data.updated)}</p>}
+      </div>
+    </div>
+  </div>
+  <div class="markdown">
+    <Content />
+  </div>
+  <div class="bloglink">
+    <hr />
+    <a href={useLink("/blog")}>ブログ一覧へ ></a>
+  </div>
+  <BottomAd />
+</BlogLayout>
+<style>
+  .hero {
+    margin: 8px 16px;
+    border-bottom: 2px solid rgb(58, 33, 125);
+    h1 {
+      text-align: center;
+    }
+  }
+  .hero_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .hero_dates {
+      color: gray;
+      font-size: 14px;
+      float: right;
+      p {
+        margin: 4px;
+      }
+    }
+    .hero_tags {
+      display: flex;
+      margin-bottom: 8px;
+      .hero_tag {
+        display: block;
+        background: lightgray;
+        color: #505050;
+        padding: 4px 12px 4px 8px;
+        font-size: 14px;
+        border-radius: 8px;
+        margin: 4px;
+      }
+    }
+  }
+  .markdown {
+    margin: 8px 32px;
+    min-height: 60dvh;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  .bloglink {
+    padding: 0 16px;
+    text-align: right;
+  }
+</style>

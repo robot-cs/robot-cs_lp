@@ -71,7 +71,7 @@
 </template>
 <script setup lang="ts">
 import { useLink } from "../../utils/link";
-import blogData from "../../data/bloglist.json";
+//import blogData from "../../data/bloglist.json";
 import { icon, library } from "@fortawesome/fontawesome-svg-core";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { ref, onMounted, watch } from "vue";
@@ -80,6 +80,7 @@ library.add(faPen);
 const penIcon = icon(faPen);
 
 const blogURL = "blog/";
+const { blogData } = defineProps<{ blogData: any }>();
 
 const allPosts: BlogType[] = blogData.blog;
 const allTags = blogData.tags;
