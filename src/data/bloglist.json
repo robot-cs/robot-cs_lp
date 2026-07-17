@@ -1,6 +1,15 @@
 {
   "blog": [
     {
+      "slug": "8",
+      "title": "ロボット教室",
+      "description": "No description",
+      "created": "2026-07-17T12:30:00.000Z",
+      "tag": [
+        ""
+      ]
+    },
+    {
       "slug": "7",
       "title": "気づけば先輩になっていました",
       "description": "No description",

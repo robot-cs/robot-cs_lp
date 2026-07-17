@@ -4,13 +4,14 @@ import BlogHeader from "../../components/blog/BlogHeader.astro";
 import BlogFooter from "../../components/Footer.astro";
 import BlogList from "../../components/blog/BlogList.vue";
 import BottomAd from "../../components/advertisement/bottom-ad.astro";
+import blogData from "../../data/bloglist.json";
 ---
 
 <Layout>
   <BlogHeader />
   <main>
     <h1>Blog</h1>
-    <BlogList client:load />
+    <BlogList blogData={blogData} client:load />
   </main>
   <BottomAd />
   <BlogFooter />
